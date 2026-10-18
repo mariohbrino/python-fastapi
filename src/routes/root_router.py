@@ -6,10 +6,10 @@ from controllers.root_controller import index
 
 
 def create_root_router() -> APIRouter:
-    router_router = APIRouter()
+    root_router = APIRouter()
 
-    @router_router.get("/")
+    @root_router.get("/")
     async def root() -> Dict[str, str]:
         return await index()
 
-    return router_router
+    return root_router

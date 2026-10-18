@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-from routes.index_router import index_router
+from routes.routes import create_routes
 
 
 def register_routers(app: FastAPI) -> None:
-    for router in index_router:
+    for router in create_routes():
         app.include_router(router)
 
 
