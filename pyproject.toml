@@ -1,0 +1,29 @@
+[project]
+name = "zero"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    {name = "Mario Brino", email = "mariobrino@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "fastapi[standard]>=0.143.3",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.fastapi]
+entrypoint = "src.server:app"
