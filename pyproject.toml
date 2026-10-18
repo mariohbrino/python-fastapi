@@ -16,6 +16,9 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.17.1",
     "ty>=0.0.89",
 ]
@@ -28,3 +31,12 @@ where = ["src"]
 
 [tool.fastapi]
 entrypoint = "src.server:app"
+
+[tool.coverage.run]
+branch = true
+source_dirs = ["src"]
+
+[tool.coverage.report]
+fail_under = 95
+include_namespace_packages = true
+show_missing = true
