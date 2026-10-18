@@ -1,6 +1,11 @@
 from fastapi import FastAPI
 
-from routes.root_router import create_root_router
+from routes.index_router import index_router
+
+
+def register_routers(app: FastAPI) -> None:
+    for router in index_router:
+        app.include_router(router)
 
 
 def create_app() -> FastAPI:
@@ -9,5 +14,5 @@ def create_app() -> FastAPI:
         redoc_url=None,
         openapi_url=None,
     )
-    app.include_router(create_root_router())
+    register_routers(app)
     return app
