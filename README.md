@@ -29,3 +29,9 @@ Linting check and format for python using Ruff.
 ruff check .
 ruff format .
 ```
+
+Type checking for python using Ty.
+
+```bash
+ty check .
+```
