@@ -33,10 +33,10 @@ jobs:
       - name: Install dependencies
         run: uv sync
       - name: Run unit tests
-        run: uv run pytest tests/units -v --cov
+        run: uv run pytest tests/units -v
 
-  integration-tests:
-    name: Integration Tests
+  feature-tests:
+    name: Feature Tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -57,5 +57,5 @@ jobs:
           enable-cache: true
       - name: Install dependencies
         run: uv sync
-      - name: Run integration tests
-        run: uv run pytest tests/integration -v --cov
+      - name: Run feature tests
+        run: uv run pytest tests/features -v
