@@ -1,5 +1,2 @@
-from typing import Dict
-
-
-async def index() -> Dict[str, str]:
+async def index() -> dict[str, str]:
     return {"message": "Hello World"}
