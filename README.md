@@ -2,6 +2,12 @@
 
 ## Initial set up
 
+Install UV package manager using the following command:
+
+```bash
+pip install uv
+```
+
 Using UV to install the dependencies and create a virtual environment for the FastAPI project.
 
 ```bash
@@ -15,4 +21,11 @@ To start the development server, run the following command:
 
 ```bash
 fastapi dev
+```
+
+Linting check and format for python using Ruff.
+
+```bash
+ruff check .
+ruff format .
 ```
