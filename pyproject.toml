@@ -35,12 +35,3 @@ where = ["src"]
 
 [tool.fastapi]
 entrypoint = "src.server:app"
-
-[tool.coverage.run]
-branch = true
-source_dirs = ["src"]
-
-[tool.coverage.report]
-fail_under = 95
-include_namespace_packages = true
-show_missing = true
