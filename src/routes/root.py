@@ -4,5 +4,5 @@ router_router = APIRouter()
 
 
 @router_router.get("/")
-def home() -> dict:
+def root() -> dict:
     return {"message": "Hello World"}
