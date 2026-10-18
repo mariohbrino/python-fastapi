@@ -37,5 +37,8 @@
   ],
   "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.typeCheckingMode": "off"
+  "python.analysis.typeCheckingMode": "off",
+  "python.languageServer": "Pylance",
+  "ty.disableLanguageServices": true,
+  "ty.diagnosticMode": "workspace"
 }
