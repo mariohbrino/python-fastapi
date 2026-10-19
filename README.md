@@ -15,6 +15,11 @@ uv sync
 source .venv/bin/activate
 ```
 
+> [!IMPORTANT]
+> When working with Apple Silicon (ARM64), it requires to install python 3.13 using homebrew,
+> then use flag --python /opt/homebrew/bin/python3.13 due to architecture-specific
+> dependencies.
+
 ## Development
 
 To start the development server, run the following command:
