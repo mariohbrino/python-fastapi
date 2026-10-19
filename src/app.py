@@ -10,6 +10,6 @@ def create_app() -> FastAPI:
         openapi_url=None,
     )
 
-    app.include_router(create_routes(config_registry))
+    app.include_router(create_routes())
 
     return app
