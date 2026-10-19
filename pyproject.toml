@@ -12,6 +12,9 @@ license-files = ["LICENSE"]
 dependencies = [
     "dependency-injector>=4.49.1",
     "fastapi[standard]>=0.143.3",
+    "psycopg2-binary>=2.9.13",
+    "psycopg[binary]>=3.3.6",
+    "sqlalchemy[asyncio]>=2.1.5",
     "uvicorn>=0.54.0",
 ]
 
