@@ -17,6 +17,6 @@ tests
 .env*
 .gitignore
 .ruff.toml
-.ty.toml
+ty.toml
 pytest.ini
 README.md
