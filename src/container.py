@@ -12,10 +12,6 @@ def get_config_file(file_name: str) -> str:
 
 
 class AppContainer(containers.DeclarativeContainer):
-    wiring_config = containers.WiringConfiguration(
-        packages=["routes", "controllers", "services"],
-    )
-
     config = providers.Configuration(
         ini_files=[get_config_file("config.ini")],
         strict=True,
