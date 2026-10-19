@@ -32,6 +32,8 @@ jobs:
           enable-cache: true
       - name: Install dependencies
         run: uv sync
+      - name: Create config file
+        run: cp config.ini.example config.ini
       - name: Run unit tests
         run: uv run pytest tests/units -v
 
@@ -57,5 +59,7 @@ jobs:
           enable-cache: true
       - name: Install dependencies
         run: uv sync
+      - name: Create config file
+        run: cp config.ini.example config.ini
       - name: Run feature tests
         run: uv run pytest tests/features -v
