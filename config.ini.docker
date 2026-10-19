@@ -1,0 +1,8 @@
+[database]
+driver=pgsql
+host=db_fastapi
+port=5453
+database=fastapi
+username=fastapi
+password=password
+sslmode=allow

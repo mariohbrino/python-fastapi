@@ -26,3 +26,20 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: fastapi
+    restart: unless-stopped
+    profiles: [ "deploy" ]
+    ports:
+      - 8000:8000
+    volumes:
+      - ./config.ini.docker:/app/config.ini
+    networks:
+      - internal
+    depends_on:
+      db-fastapi:
+        condition: service_healthy
