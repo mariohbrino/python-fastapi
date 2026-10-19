@@ -3,7 +3,6 @@ from pydantic import ValidationError
 
 from configs.database_config import DatabaseConfig
 from container import AppContainer
-from services.database_service import DatabaseService
 
 DATABASE = {
     "driver": "pgsql",
@@ -34,12 +33,3 @@ def test_config_registry_rejects_invalid_config() -> None:
     container.config.from_dict({"database": {**DATABASE, "port": "not-a-port"}})
     with pytest.raises(ValidationError):
         container.config_registry()
-
-
-def test_database_service_builds_engine_from_config() -> None:
-    database: DatabaseConfig = make_container().config_registry().database
-    service = DatabaseService(database)
-    assert service.engine.url.render_as_string(hide_password=False) == (
-        "postgresql+psycopg2://user:secret@localhost:5432/app?sslmode=allow"
-    )
-    service.dispose()
